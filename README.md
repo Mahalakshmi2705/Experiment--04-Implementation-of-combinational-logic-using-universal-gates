@@ -123,6 +123,7 @@ FOR PROGRAM 2:
 
 ![Screenshot (75)](https://user-images.githubusercontent.com/122199968/213875394-cd835930-8d9b-4b2c-970b-84b65e8f972c.png)
 
+
 RESULT:
 
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
@@ -131,8 +132,3 @@ Thus the given logic functions are implemented using NAND and NOR gates and thei
 
 
 
-## Output:
-## RTL
-## Timing Diagram
-## Result:
-Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
