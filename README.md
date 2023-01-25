@@ -3,9 +3,9 @@ Experiment--04-Implementation-of-combinational-logic-using-universal-gates
 Implementation of combinational logic using universal-gates
 
  
-AIM:
+Aim:
    
-   To implement the given logic function using NAND and NOR gates and to verify its operation in Quartus using Verilog programming.
+To implement the given logic function using NAND and NOR gates and to verify its operation in Quartus using Verilog programming.
 
 F=((C'.B.A)'(D'.C.A)'(C.B'.A)')' using NAND gate
 
@@ -13,9 +13,9 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')' using NOR gate
 
 Equipments Required:
 
-  Hardware – PCs, Cyclone II , USB flasher
+Hardware – PCs, Cyclone II , USB flasher
   
-  Software – Quartus prime
+Software – Quartus prime
 
 
 Theory:
@@ -36,90 +36,68 @@ NOR gate is actually a combination of two logic gates: OR gate followed by NOT g
 F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 
-Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
+    Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
+    Developed by : MAHALAKSHMI S 
+    RegisterNumber:  22008601
 
-Developed by : MAHALAKSHMI S 
+procedure:
 
-RegisterNumber:  22008601
+PROGRAM USING NAND:
 
-procedure
+    module expfourone(a,b,c,d,f);
+    input a,b,c,d;
+    output f;
+    wire f1,f2,f3;
+    assign f1 = (~c&~b&~a);
+    assign f2 = (~d&~c&~a);
+    assign f3 = (c&~(~b)&~a);
+    assign f= f1&~f2&~f3;
+    endmodule
 
-PROGRAM 1:
+PROGRAM USING NOR:
 
-module expfourone(a,b,c,d,f);
-
-input a,b,c,d;
-
-output f;
-
-wire f1,f2,f3;
-
-assign f1 = (~c&~b&~a);
-
-assign f2 = (~d&~c&~a);
-
-assign f3 = (c&~(~b)&~a);
-
-assign f= f1&~f2&~f3;
-
-endmodule
-
-PROGRAM 2:
-
-module expfourtwo(a,b,c,d,f);
-
-input a,b,c,d;
-
-output f;
-
-wire f1,f2,f3,f4;
-
-assign f1 = c&(~b)&a;
-
-assign f2 = d&(~c)&a;
-
-assign f3 = c&(~b)&a;
-
-assign f4 = ~(f1|f2|f3);
-
-not(f,f4);
-
-endmodule
+    module expfourtwo(a,b,c,d,f);
+    input a,b,c,d;
+    output f;
+    wire f1,f2,f3,f4;
+    assign f1 = c&(~b)&a;
+    assign f2 = d&(~c)&a;
+    assign f3 = c&(~b)&a;
+    assign f4 = ~(f1|f2|f3);
+    not(f,f4);
+    endmodule
 
 OUTPUT:
 
 RTL realization:
 
-FOR PROGRAM 1:
+FOR PROGRAM USING NAND:
 
 ![Screenshot (70)](https://user-images.githubusercontent.com/122199968/213875096-e55c6d6d-be84-46ea-be54-3137e7f91e3b.png)
 
 
-FOR PROGRAM 2:
+FOR PROGRAM USING NOR:
 
 ![Screenshot (71)](https://user-images.githubusercontent.com/122199968/213875158-44e199e0-adcf-4f46-95d0-39928992e62b.png)
 
 
 TRUTH TABLE:
 
-FOR PROGRAM 1:
+FOR PROGRAM USING  NAND:
 
 ![Screenshot (72)](https://user-images.githubusercontent.com/122199968/213875221-7523a059-14fb-48bf-a02e-a0e60a211a56.png)
 
-FOR PROGRAM 2:
+FOR PROGRAM USING NOR:
 
 ![Screenshot (73)](https://user-images.githubusercontent.com/122199968/213875280-81b993fe-fcfc-4c8a-8057-e06e0db4b340.png)
 
 TIMING DIAGRAM:
 
-FOR PROGRAM 1:
-
+FOR PROGRAM USING NAND:
 
 ![Screenshot (74)](https://user-images.githubusercontent.com/122199968/213875325-10ec35b9-9495-4153-b5ef-b62839f78f22.png)
 
-
-FOR PROGRAM 2:
-
+FOR PROGRAM USING NOR:
 
 ![Screenshot (75)](https://user-images.githubusercontent.com/122199968/213875394-cd835930-8d9b-4b2c-970b-84b65e8f972c.png)
 
